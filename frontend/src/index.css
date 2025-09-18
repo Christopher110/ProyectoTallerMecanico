@@ -1,0 +1,17 @@
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(135deg, #232526, #414345);
+  color: white;
+}
+.btn-gradient {
+  background: linear-gradient(45deg, #283E51, #485563);
+  border: none;
+  color: white !important;
+  transition: all 0.3s ease;
+}
+.btn-gradient:hover {
+  background: linear-gradient(45deg, #1D976C, #93F9B9);
+  transform: scale(1.05);
+}
