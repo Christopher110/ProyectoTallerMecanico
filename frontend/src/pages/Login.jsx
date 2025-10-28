@@ -15,8 +15,7 @@ export default function Login(){
   async function onSubmit(e){
     e.preventDefault()
     try{
-      //const data = await login(email, password)
-      const data = { name: "Admin User", email: email } // Mocked response
+      const data = await login(email, password)
       doLogin(data)
       Swal.fire({
         icon: 'success',
