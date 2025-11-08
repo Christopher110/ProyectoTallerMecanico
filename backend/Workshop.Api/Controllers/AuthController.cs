@@ -25,7 +25,9 @@ namespace Workshop.Api.Controllers
         public async Task<ActionResult<LoginResponse>> Login([FromBody] LoginRequest req)
         {
             var user = await _db.Users.FirstOrDefaultAsync(u => u.Email == req.Email && u.IsActive);
-            if (user == null || !BCrypt.Net.BCrypt.Verify(req.Password, user.PasswordHash))
+            bool validaContrasenia = BCrypt.Net.BCrypt.Verify(req.Password, user.PasswordHash);
+
+            if (user == null || !validaContrasenia)
                 return Unauthorized("Credenciales inválidas");
                 //return Ok("Credenciales inválidas");
 

@@ -26,4 +26,14 @@ namespace Workshop.Api.DTOs
         public int? Odometer { get; set; }
         public string? ReceptionNotes { get; set; }
     }
+
+    public class AppointmentCreateDto
+    {
+        public string CustomerName { get; set; }
+        public string CustomerPhone { get; set; }
+        public string Plates { get; set; } = string.Empty;
+        public string? ServicesForVehicle { get; set; }
+        public DateTime AppointmentDate { get; set; }
+        public string? PaymentMethod { get; set; }
+    }
 }
