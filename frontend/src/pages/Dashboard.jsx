@@ -31,6 +31,9 @@ export default function Dashboard(){
           <Link to="/customers" className="btn btn-gradient w-100 py-3">👤 Clientes</Link>
         </div>
         <div className="col-md-3">
+          <Link to="/vehicles" className="btn btn-gradient w-100 py-3">🚗 Vehículos</Link>
+        </div>
+        <div className="col-md-3">
           <Link to="/orders" className="btn btn-gradient w-100 py-3">📑 Órdenes</Link>
         </div>
         <div className="col-md-3">

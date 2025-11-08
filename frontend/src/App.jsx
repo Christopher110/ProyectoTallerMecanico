@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Customers from './pages/Customers'
+import Vehicles from './pages/Vehicles'
 import Orders from './pages/Orders'
 import Inventory from './pages/Inventory'
 import Appointments from './pages/Appointments'
@@ -13,6 +14,7 @@ export default function App(){
       <Route path="/login" element={<Login/>} />
       <Route path="/" element={<Protected><Dashboard/></Protected>} />
       <Route path="/customers" element={<Protected><Customers/></Protected>} />
+      <Route path="/vehicles" element={<Protected><Vehicles/></Protected>} />
       <Route path="/orders" element={<Protected><Orders/></Protected>} />
       <Route path="/inventory" element={<Protected><Inventory/></Protected>} />
       <Route path="/appointments" element={<Protected><Appointments/></Protected>} />
