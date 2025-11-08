@@ -92,26 +92,30 @@ export default function Appointments() {
     }
 
     const data = appointments.map(a => ({
-      Placa: v.plate,
-      Marca: v.brand,
-      Modelo: v.model,
-      Año: v.year
+      Nombre: a.customerName,
+      Teléfono: a.customerPhone,
+      Placas: a.plates,
+      Servicios: a.servicesForVehicle,
+      Fecha: new Date(a.appointmentDate).toLocaleDateString(),
+      MetodoPago: a.paymentMethod
     }))
 
     // crear hoja con los datos (asegura el orden de columnas)
-    const headers = ['Placa', 'Marca', 'Modelo', 'Año']
+    const headers = ['Nombre', 'Teléfono', 'Placas', 'Servicios', 'Fecha', 'MetodoPago']
     const ws = XLSX.utils.json_to_sheet(data, { header: headers })
 
     // definir anchos de columna (wch = characters)
     ws['!cols'] = [
-      { wch: 20 }, // Placa
-      { wch: 30 }, // Marca
-      { wch: 20 }, // Modelo
-      { wch: 15 }  // Año
+      { wch: 25 }, // Nombre
+      { wch: 10 }, // Telefono
+      { wch: 15 }, // Placas
+      { wch: 50 }, // Servicios
+      { wch: 10 }, // Fecha
+      { wch: 15 }, // MetodoPago
     ]
 
     // aplicar estilo a las celdas de encabezado (negrita y color de fondo)
-    const headerCells = ['A1', 'B1', 'C1', 'D1']
+    const headerCells = ['A1', 'B1', 'C1', 'D1', 'E1', 'F1']
     headerCells.forEach(cell => {
       if (!ws[cell]) return
       ws[cell].s = {
