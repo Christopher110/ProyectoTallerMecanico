@@ -106,10 +106,10 @@ export default function Appointments() {
 
     // definir anchos de columna (wch = characters)
     ws['!cols'] = [
-      { wch: 25 }, // Nombre
+      { wch: 40 }, // Nombre
       { wch: 10 }, // Telefono
       { wch: 15 }, // Placas
-      { wch: 50 }, // Servicios
+      { wch: 150 }, // Servicios
       { wch: 10 }, // Fecha
       { wch: 15 }, // MetodoPago
     ]
